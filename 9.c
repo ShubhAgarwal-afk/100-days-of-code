@@ -1,15 +1,15 @@
 #include<stdio.h>
 #include<math.h>
 int main()
-{int a;
-int b;
-int c;
+{float a;
+float b;
+float c;
 printf("Enter Your Principal amount:");
-scanf("%d",&a);
+scanf("%f",&a);
 printf("Enter time(in years):");
-scanf("%d",&b);
+scanf("%f",&b);
 printf("Enter rate(Per annum):");
-scanf("%d",&c);
+scanf("%f",&c);
 float S;
 S=(a*b*c)/100;
 float C;
