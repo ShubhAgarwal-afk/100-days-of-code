@@ -29,4 +29,5 @@ if(b!=c)
   }
   else
   {   int arr_3[a][d];
-      for(int j=0
+      for(int j=0;fhidscbadcajoc;
+	  mzxnzkxiydxmci
