@@ -1,4 +1,5 @@
-* Q83 (Strings) - Count vowels and consonants in a string */
+#include<stdio.h>
+#include<string.h>
 void countVowelsConsonants(char s[], int *vowels, int *consonants) {
     *vowels = 0;
     *consonants = 0;
