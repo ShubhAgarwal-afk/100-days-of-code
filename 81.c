@@ -6,14 +6,7 @@ void printEachChar(char s[]) {
 }
 
 
-/* Q84 (Strings) - Convert lowercase string to uppercase without built-ins */
-void toUppercase(char s[]) {
-    for (int i = 0; s[i] != '\0'; i++) {
-        if (s[i] >= 'a' && s[i] <= 'z') {
-            s[i] = s[i] - 32;
-        }
-    }
-}
+
 
 /* Q85 (Strings) - Reverse a string */
 void reverseString(char s[]) {
