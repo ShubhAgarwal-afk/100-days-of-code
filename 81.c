@@ -10,17 +10,7 @@ void printEachChar(char s[]) {
 
 
 
-/* Q86 (Strings) - Check if a string is a palindrome */
-int isPalindrome(char s[]) {
-    int len = 0;
-    while (s[len] != '\0') len++;
-    for (int i = 0; i < len / 2; i++) {
-        if (s[i] != s[len - 1 - i]) {
-            return 0;
-        }
-    }
-    return 1;
-}
+
 
 /* Q87 (Strings) - Count spaces, digits, and special characters in a string */
 void countSpacesDigitsSpecial(char s[], int *spaces, int *digits, int *special) {
