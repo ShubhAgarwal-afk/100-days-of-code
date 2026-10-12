@@ -1,7 +1,9 @@
 /* Q85 (Strings) - Reverse a string */
 #include<stdio.h>
 int main()
-{char s[100]; 
+{char s[100];
+printf("Enter Your string:");
+fgets(s,sizeof(s),stdin);
     int len = 0;
     while (s[len] != '\0') 
 	{len++;
@@ -12,5 +14,6 @@ int main()
         s[i] = s[len - 1 - i];
         s[len - 1 - i] = temp;
     }
+	printf("Your reversed string is:%s",s);
 return 0;
 }
