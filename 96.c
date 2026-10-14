@@ -1,13 +1,33 @@
 #include<stdio.h>
 #include<string.h>
 int main()
-{ printf("Enter your string:");
-  char str[100];
-  fgets(str,sizeof(str),stdin);
-  int length=strlen(str);
-  for(int i=0;i<length;i++)
-     {
-	   for(int j=0;j<length;j++)
-	      {
-		    if(atoi(str[i])>96 || atoi(str[i])<123)
-			   {       atoi(str[i])==
+{  char str[100];
+   printf("Enter the string:");
+   fgets(str,sizeof(str),stdin);
+   int n = strlen(str);
+   int i =0;
+   while(i<n)
+    {  
+        while(i<n && str[i]==' ')
+             {i++;}
+		int start =i;
+		
+		while(i<n && str[i] != ' ')
+		     {i++;}
+	    int end =i-1;
+		while(start<end)
+		     { char t= str[start];
+			   str[start] =str[end];
+			   str[end] =t;
+			   start++;
+			   end--;
+			   }
+			   }
+			   
+             			 
+    
+	printf("Your reversed sentence string is:%s",str);
+   return 0;
+   
+   }
+   
