@@ -1,19 +1,30 @@
 #include<stdio.h>
 #include<string.h>
 int main()
-{char str1[100];
- printf("Enter your first string:");
- fgets(str1,sizeof(str1),stdin);
- char str2[100];
- printf("Enter your second string:");
- fgets(str2,sizeof(str2),stdin);
- int l1=strlen(str1);
- int l2=strlen(str2);
- if(l1!=l2)
-    {printf("Not Rotation");
-	}
- else
-   {
+{ char s1[1000],s2[1000],s3[2000];
    
+   printf("Enter your string 1:");
+   fgets(s1,sizeof(s1),stdin);
+   s1[strcspn(s1,"\n")] ='\0';
    
+   printf("Enter your string 2:");
+   fgets(s2,sizeof(s2),stdin);
+   s2[strcspn(s2,"\n")] = '\0';  
+
+  if(strlen(s1)==strlen(s2))
+   { strcpy(s3,s1);
+     strcat(s3,s1);
+	 if(strstr(s3,s2) != NULL)
+	 {printf("Rotation");
+     }
+	 else 
+	 {printf("Not rotation");
+	 }
    }
+   else
+   {
+        printf("Not rotation");
+   }
+   return 0;
+}
+   
