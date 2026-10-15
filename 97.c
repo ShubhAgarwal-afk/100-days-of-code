@@ -4,10 +4,20 @@ int main()
 { printf("Enter your string:");
   char str[100];
   fgets(str,sizeof(str),stdin);
-  int length=strlen(str);
-  for(int i=0;i<length;i++)
+  int n =strlen(str);
+  int i =0;
+while(i<n)
      {
-	   for(int j=0;j<length;j++)
-	      {
-		    if(atoi(str[i])>96 || atoi(str[i])<123)
-			   {       atoi(str[i])==
+		 while(i<n && str[i]==' ')
+		 {  i++;
+		 }
+		 int start = i;
+		 printf("%c",str[start]);
+		 printf(".");
+		 while(i<n && str[i]!=' ')
+		    {i++;
+			}
+	 }
+	 return 0;
+}
+		 
