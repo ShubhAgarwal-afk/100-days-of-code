@@ -2,10 +2,13 @@
 
 int main() {
     int n, x;
+	printf("Enter the size of array:");
     scanf("%d", &n);
     int arr[n];
+	printf("Enter the elements of array:");
     for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
-    scanf("%d", &x);
+   printf("Enter the input:");
+   scanf("%d", &x);
 
     int lo = 0, hi = n - 1, ans = -1;
     while (lo <= hi) {
