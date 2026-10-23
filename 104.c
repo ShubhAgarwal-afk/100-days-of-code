@@ -1,1 +1,6 @@
-jubiuvbudsbvudsbvdsuncdijnciuewhf8uewvnijdfsnviabg8uaernvijozdsnvnjxAKSqkwe1209ruew9fhwiuerh329u4re89u
+#include<stdio.h>
+int main()
+{   int n;
+    printf("Enter your number:"); 
+	scanf("%d",&n);
+	
