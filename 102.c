@@ -1,26 +1,25 @@
 #include <stdio.h>
-
+int binarysearch(int a[],int n,int x)
+  { int lo =0 ,hi=n;
+      while(lo<hi)
+	      {int mid = (lo+hi)/2;
+	      if(a[mid]>=x) hi=mid;
+		  else lo=mid +1;
+		  }
+		  return lo;
+  }
 int main() {
-    int n, x;
-	printf("Enter the size of array:");
-    scanf("%d", &n);
-    int arr[n];
-	printf("Enter the elements of array:");
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
-   printf("Enter the input:");
-   scanf("%d", &x);
-
-    int lo = 0, hi = n - 1, ans = -1;
-    while (lo <= hi) {
-        int mid =  (hi + lo) / 2;
-        if (arr[mid] >= x) {
-            ans = mid;         
-            hi = mid - 1;
-        } else {
-            lo = mid + 1;
-        }
-    }
-    printf("%d\n", ans);
+	int n,target;
+    printf("Enter the size of your array:"); 
+    scanf("%d",&n);
+	int nums[n]; 
+	printf("Enter your array:");
+	for(int i=0;i<n;i++) scanf("%d",&nums[i]);
+	printf("Enter your target:");
+	scanf("%d",&target);
+    int first =binarysearch(nums,n,target);
+    if(nums[first] < target) printf("-1\n");
+	else printf("%d",first);
     return 0;
 }
 
