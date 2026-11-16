@@ -17,4 +17,4 @@ int main() {
 		seen[nums[i]]=1;
 	}
 	return 0;
-}
+} 
