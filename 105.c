@@ -1,30 +1,25 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int n;
-    scanf("%d", &n);
-    int nums[n];
-    for (int i = 0; i < n; i++)
-        scanf("%d", &nums[i]);
-
-    // Pass 1: find a candidate
-    int candidate = 0, count = 0;
-    for (int i = 0; i < n; i++) {
-        if (count == 0)
-            candidate = nums[i];
-        count += (nums[i] == candidate) ? 1 : -1;
-    }
-
-    // Pass 2: verify it appears more than n/2 times
-    count = 0;
-    for (int i = 0; i < n; i++)
-        if (nums[i] == candidate)
-            count++;
-
-    if (count > n / 2)
-        printf("%d\n", candidate);
-    else
-        printf("-1\n");
-
-    return 0;
+int main()
+{  int n;
+   printf("Enter the size of array:");
+   scanf("%d",&n);
+   int nums[n];
+   printf("Enter the elements of array:");
+   for(int i=0;i<n ;i++) scanf("%d",&nums[i]);
+   
+   int candidiate =0, count =0;
+   for(int i=0;i<n;i++)  {
+	   if(count ==0) candidate =nums[i];
+	   if(nums[i] == candidate) count++;
+	   else count--;
+   }
+   
+   int freq =0;
+   for(int i =0;i<n;i++)
+	   if(nums[i] == candidate) freq++;
+   
+   if(freq >n/2) printf("%d",candidiate);
+   else printf("-1");
+   return 0;
 }
