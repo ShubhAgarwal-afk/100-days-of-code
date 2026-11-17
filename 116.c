@@ -1,24 +1,22 @@
 #include <stdio.h>
 
+int pos[100001];                  // pos[v] = index of value v, plus 1 (0 = not seen)
+
 int main() {
-    FILE *fp;
-    char filename[100];
-    int ch;
+    int n, target;
+    scanf("%d", &n);
+    int nums[n];
+    for (int i = 0; i < n; i++) scanf("%d", &nums[i]);
+    scanf("%d", &target);
 
-    printf("Enter filename: ");
-    scanf("%99s", filename);
-
-    fp = fopen(filename, "r");
-    if (fp == NULL) {
-        printf("Error: file '%s' does not exist or cannot be opened.\n", filename);
-        return 1;
+    for (int i = 0; i < n; i++) {
+        int need = target - nums[i];
+        if (need >= 0 && need <= 100000 && pos[need]) {
+            printf("%d %d", pos[need] - 1, i);
+            return 0;
+        }
+        pos[nums[i]] = i + 1;     // store after checking, so an element never pairs with itself
     }
-
-    printf("\nFile content:\n");
-    while ((ch = fgetc(fp)) != EOF) {
-        putchar(ch);
-    }
-
-    fclose(fp);
+    printf("-1 -1");
     return 0;
 }
