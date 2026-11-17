@@ -1,24 +1,27 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    FILE *fp;
-    char filename[100];
-    int ch;
-
-    printf("Enter filename: ");
-    scanf("%99s", filename);
-
-    fp = fopen(filename, "r");
-    if (fp == NULL) {
-        printf("Error: file '%s' does not exist or cannot be opened.\n", filename);
-        return 1;
-    }
-
-    printf("\nFile content:\n");
-    while ((ch = fgetc(fp)) != EOF) {
-        putchar(ch);
-    }
-
-    fclose(fp);
-    return 0;
+int main(){
+	int n,k;
+	printf("Enter the size of array:");
+	scanf("%d",&n);
+	int arr[n];
+	printf("Enter the elements of array:");
+	for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+	printf("Enter the value of K:");
+	scanf("%d",&k);
+	
+	int dq[n];
+	int front=0,back=-1;
+	
+	for(int i=0;i<n;i++) {
+		if(front <= back && dq[front] <= i-k) front++;
+		while(front<=back && arr[dq[back]] <= arr[i]) back--;
+		dq[++back] =i;
+		if(i>=k-1) {
+			if(i>k-1) printf(" ");
+			printf("%d",arr[dq[front]]);
+		}
+		
+	}
+return 0;
 }

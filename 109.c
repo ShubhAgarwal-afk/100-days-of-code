@@ -1,24 +1,24 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    FILE *fp;
-    char filename[100];
-    int ch;
-
-    printf("Enter filename: ");
-    scanf("%99s", filename);
-
-    fp = fopen(filename, "r");
-    if (fp == NULL) {
-        printf("Error: file '%s' does not exist or cannot be opened.\n", filename);
-        return 1;
-    }
-
-    printf("\nFile content:\n");
-    while ((ch = fgetc(fp)) != EOF) {
-        putchar(ch);
-    }
-
-    fclose(fp);
-    return 0;
+	int n,k;
+	printf("Enter the size of array:");
+	scanf("%d",&n);
+	int arr[n];
+	printf("Enter the elements of array:");
+	for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+	printf("Enter K:");
+	scanf("%d",&k);
+	
+	int windowSum= 0;
+	for(int i=0;i<k;i++) windowSum +=arr[i];
+	
+	int maxSum = windowSum;
+	for(int i=k;i<n;i++) {
+		windowSum += arr[i] -arr[i-k]; 
+    if (windowSum > maxSum) maxSum =windowSum;
+	}
+	
+	printf("%d",maxSum);
+	return 0;
 }
